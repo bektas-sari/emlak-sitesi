@@ -31,7 +31,7 @@ Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin.
 
 ### Adım 1: Projeyi Klonlayın
 
-git clone https://github.com/bektas-sari/emlak_sitem.git
+git clone https://github.com/bektas-sari/emlak_sitesi.git
 cd emlak_sitem
 
 ### Adım 2: Sanal Ortam Oluşturun ve Etkinleştirin
