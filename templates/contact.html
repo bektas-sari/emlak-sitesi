@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="top-bar">
+        <p>Telefon: 0123 456 78 90 | Email: info@emlaksitem.com</p>
+    </div>
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Site Logo">
+        </div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Ana Sayfa</a></li>
+            <li><a href="{{ url_for('about') }}">Hakkımızda</a></li>
+            <li><a href="{{ url_for('projects') }}">Projeler</a></li>
+            <li><a href="{{ url_for('contact') }}">İletişim</a></li>
+        </ul>
+    </nav>
+    <h1>İletişim</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div class="contact-form">
+        <form action="{{ url_for('contact') }}" method="POST">
+            <label for="name">Adınız:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mesajınız:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Gönder</button>
+        </form>
+    </div>
+</body>
+</html>

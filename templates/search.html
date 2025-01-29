@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arama Sonuçları</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="top-bar">
+        <p>Telefon: 0123 456 78 90 | Email: info@emlaksitem.com</p>
+    </div>
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Site Logo">
+        </div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Ana Sayfa</a></li>
+            <li><a href="{{ url_for('about') }}">Hakkımızda</a></li>
+            <li><a href="{{ url_for('projects') }}">Projeler</a></li>
+            <li><a href="{{ url_for('contact') }}">İletişim</a></li>
+        </ul>
+    </nav>
+    <h1>"{{ query }}" için Arama Sonuçları</h1>
+    <div class="ilanlar">
+        {% if results %}
+            {% for ilan in results %}
+                <div class="ilan">
+                    <h2>{{ ilan['baslik'] }}</h2>
+                    <p>Konum: {{ ilan['konum'] }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Hiç ilan bulunamadı.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

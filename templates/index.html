@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emlak Sitem</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="top-bar">
+        <p>Telefon: 0123 456 78 90 | Email: info@emlaksitem.com</p>
+    </div>
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Site Logo">
+        </div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Ana Sayfa</a></li>
+            <li><a href="{{ url_for('about') }}">Hakkımızda</a></li>
+            <li><a href="{{ url_for('projects') }}">Projeler</a></li>
+            <li><a href="{{ url_for('contact') }}">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('{{ url_for('static', filename='hero-image.jpg') }}');">
+        <div class="hero-content">
+            <h2>Tam İstediğin Arsayı, Hepsiemlak'ta Kolayca Ara, Rahatça Bul</h2>
+            <form action="{{ url_for('search') }}" method="GET" class="search-bar">
+                <input type="text" name="query" placeholder="Konum, ilan no ya da firma adıyla arayın">
+                <button type="submit">Ara</button>
+            </form>
+            <div class="filters">
+                <a href="{{ url_for('filter', type='satilik') }}">Satılık</a>
+                <a href="{{ url_for('filter', type='kiralik') }}">Kiralık</a>
+                <a href="{{ url_for('filter', type='gunluk-kiralik') }}">Günlük Kiralık</a>
+                <a href="{{ url_for('filter', type='projeler') }}">Projeler</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Öne Çıkan İlanlar -->
+    <section class="featured-listings">
+        <h2>Öne Çıkan İlanlar</h2>
+        <div class="listings">
+            <div class="listing">
+                <img src="{{ url_for('static', filename='listing1.jpg') }}" alt="İlan 1">
+                <h3>Satılık Daire</h3>
+                <p>Konum: İstanbul</p>
+                <p>Fiyat: 1.000.000 TL</p>
+                <a href="{{ url_for('ilan_detay', ilan_id=1) }}">Detaylar</a>
+            </div>
+            <div class="listing">
+                <img src="{{ url_for('static', filename='listing1.jpg') }}" alt="İlan 2">
+                <h3>Kiralık Villa</h3>
+                <p>Konum: İzmir</p>
+                <p>Fiyat: 10.000 TL/Aylık</p>
+                <a href="{{ url_for('ilan_detay', ilan_id=2) }}">Detaylar</a>
+            </div>
+            <div class="listing">
+                <img src="{{ url_for('static', filename='listing1.jpg') }}" alt="İlan 3">
+                <h3>Günlük Kiralık Yazlık</h3>
+                <p>Konum: Bodrum</p>
+                <p>Fiyat: 1.000 TL/Günlük</p>
+                <a href="{{ url_for('ilan_detay', ilan_id=3) }}">Detaylar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kategoriler -->
+    <section class="categories">
+        <h2>Kategoriler</h2>
+        <div class="category-list">
+            <a href="{{ url_for('filter', type='satilik') }}" class="category">
+                <img src="{{ url_for('static', filename='listing1.jpg') }}" alt="Satılık">
+                <p>Satılık</p>
+            </a>
+            <a href="{{ url_for('filter', type='kiralik') }}" class="category">
+                <img src="{{ url_for('static', filename='listing1.jpg') }}" alt="Kiralık">
+                <p>Kiralık</p>
+            </a>
+            <a href="{{ url_for('filter', type='gunluk-kiralik') }}" class="category">
+                <img src="{{ url_for('static', filename='listing1.jpg') }}" alt="Günlük Kiralık">
+                <p>Günlük Kiralık</p>
+            </a>
+            <a href="{{ url_for('filter', type='projeler') }}" class="category">
+                <img src="{{ url_for('static', filename='listing1.jpg') }}" alt="Projeler">
+                <p>Projeler</p>
+            </a>
+        </div>
+    </section>
+    <!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h3>Hakkımızda</h3>
+            <p>Emlak Sitem, en güzel evleri bulmanız için burada. Müşteri memnuniyeti bizim için her zaman ön plandadır.</p>
+        </div>
+        <div class="footer-section links">
+            <h3>Hızlı Bağlantılar</h3>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Ana Sayfa</a></li>
+                <li><a href="{{ url_for('about') }}">Hakkımızda</a></li>
+                <li><a href="{{ url_for('projects') }}">Projeler</a></li>
+                <li><a href="{{ url_for('contact') }}">İletişim</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact">
+            <h3>İletişim</h3>
+            <p>Adres: 1234 Emlak Caddesi, İstanbul</p>
+            <p>Telefon: 0123 456 78 90</p>
+            <p>Email: info@emlaksitem.com</p>
+        </div>
+        <div class="footer-section social">
+            <h3>Sosyal Medya</h3>
+            <div class="social-links">
+                <a href="#" target="_blank"><img src="{{ url_for('static', filename='facebook.png') }}" alt="Facebook"></a>
+                <a href="#" target="_blank"><img src="{{ url_for('static', filename='twitter.png') }}" alt="Twitter"></a>
+                <a href="#" target="_blank"><img src="{{ url_for('static', filename='instagram.png') }}" alt="Instagram"></a>
+                <a href="#" target="_blank"><img src="{{ url_for('static', filename='linkedin.png') }}" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2023 Emlak Sitem | Tüm Hakları Saklıdır
+    </div>
+</footer>
+</body>
+</html>
