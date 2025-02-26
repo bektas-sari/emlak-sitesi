@@ -52,3 +52,8 @@ Uygulama, http://127.0.0.1:5000/ adresinde çalışacaktır.
 
 ### Lisans
 Bu proje MIT Lisansı altında lisanslanmıştır.
+
+### İletişim
+GitHub: bektas-sari 
+Email: bektas.sari@gmail.com 
+LinkedIn: bektas-sari
