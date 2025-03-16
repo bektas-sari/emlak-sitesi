@@ -1,6 +1,5 @@
-───────────────────────────────────────────────
+
                    EMLAK SİTESİ
-───────────────────────────────────────────────
 
 # Proje Hakkında:
 Python/Flask ile geliştirilmiş, statik emlak sitesi denemesi.  
