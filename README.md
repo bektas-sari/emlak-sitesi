@@ -1,59 +1,75 @@
-# emlak-sitesi
-Python/Flask ile Statik Emlak Sitesi Denemesi
+───────────────────────────────────────────────
+                   EMLAK SİTESİ
+───────────────────────────────────────────────
 
-# Emlak Sitem (Python/Flask Kullanılarak DeepSeek Ai Kod Editörünün yardımıyla Oluşturulmuştur)
+Proje Hakkında:
+Python/Flask ile geliştirilmiş, statik emlak sitesi denemesi.  
+Kullanıcılar, satılık, kiralık ve günlük kiralık ilanları kolayca görüntüleyebilir.
 
-Emlak Sitem, kullanıcıların satılık, kiralık ve günlük kiralık emlak ilanlarını kolayca bulabileceği bir web uygulamasıdır. Flask framework'ü kullanılarak geliştirilmiştir.
+───────────────────────────────────────────────
+                   ÖZELLİKLER
+───────────────────────────────────────────────
+• Ana Sayfa:
+  - Öne çıkan ilanlar  
+  - Kategori filtreleme  
+  - Dinamik arama motoru
 
-## Özellikler
+• Hakkımızda:
+  - Şirket bilgileri  
+  - Misyon & Vizyon
 
-- **Ana Sayfa:** Öne çıkan ilanlar, kategoriler ve arama motoru.
-- **Hakkımızda:** Şirket bilgileri ve misyonumuz.
-- **Projeler:** Devam eden ve tamamlanan projeler.
-- **İletişim:** Kullanıcıların bize ulaşabileceği iletişim formu.
-- **Admin Paneli:** Mesajları yönetmek için basit bir admin paneli (gelecek sürümde).
+• Projeler:
+  - Devam eden ve tamamlanmış projeler listesi
 
-## Teknolojiler
+• İletişim:
+  - Kullanıcıların bize ulaşabileceği iletişim formu
 
-- **Backend:** Flask (Python)
-- **Frontend:** HTML, CSS, JavaScript
-- **Veritabanı:** SQLite
-- **Diğer Araçlar:** Jinja2 (Templating), SQLAlchemy (Veritabanı Yönetimi)
+• Gelecek Sürüm:
+  - Admin Paneli (Mesaj ve ilan yönetimi)
 
-## Kurulum
+───────────────────────────────────────────────
+                 TEKNOLOJİLER
+───────────────────────────────────────────────
+• Backend: Flask (Python)  
+• Frontend: HTML, CSS, JavaScript  
+• Veritabanı: SQLite  
+• Ek Araçlar: Jinja2, SQLAlchemy
 
-Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin.
+───────────────────────────────────────────────
+              KURULUM VE BAŞLANGIÇ
+───────────────────────────────────────────────
 
-### Gereksinimler
+1. Projeyi Klonlayın:
+   git clone https://github.com/bektas-sari/emlak_sitesi.git
+   cd emlak_sitem
 
-- Python 3.8 veya üzeri
-- Pip (Python paket yöneticisi)
+2. Sanal Ortam Oluşturun ve Etkinleştirin:
+   Linux/MacOS:
+      python -m venv venv
+      source venv/bin/activate
+   Windows:
+      python -m venv venv
+      venv\Scripts\activate
 
-### Adım 1: Projeyi Klonlayın
+3. Gerekli Paketleri Yükleyin:
+   pip install -r requirements.txt
 
-git clone https://github.com/bektas-sari/emlak_sitesi.git
-cd emlak_sitem
+4. Veritabanını Başlatın:
+   python init_db.py
 
-### Adım 2: Sanal Ortam Oluşturun ve Etkinleştirin
-python -m venv venv
-source venv/bin/activate  # Linux/MacOS
-venv\Scripts\activate     # Windows
+5. Uygulamayı Çalıştırın:
+   python app.py
+   → Uygulama http://127.0.0.1:5000/ adresinde çalışacaktır.
 
-### Adım 3: Gerekli Paketleri Yükleyin
-pip install -r requirements.txt
+───────────────────────────────────────────────
+                    LİSANS
+───────────────────────────────────────────────
+Bu proje MIT Lisansı kapsamında lisanslanmıştır.
 
-### Adım 4: Veritabanını Başlatın
-python init_db.py
-
-### Adım 5: Uygulamayı Çalıştırın
-python app.py
-
-Uygulama, http://127.0.0.1:5000/ adresinde çalışacaktır.
-
-### Lisans
-Bu proje MIT Lisansı altında lisanslanmıştır.
-
-### İletişim
-GitHub: bektas-sari 
-Email: bektas.sari@gmail.com 
-LinkedIn: bektas-sari
+───────────────────────────────────────────────
+                   İLETİŞİM
+───────────────────────────────────────────────
+• GitHub:  https://github.com/bektas-sari  
+• Email:   bektas.sari@gmail.com  
+• LinkedIn: https://www.linkedin.com/in/bektas-sari
+───────────────────────────────────────────────
