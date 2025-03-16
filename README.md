@@ -2,7 +2,7 @@
                    EMLAK SİTESİ
 ───────────────────────────────────────────────
 
-Proje Hakkında:
+# Proje Hakkında:
 Python/Flask ile geliştirilmiş, statik emlak sitesi denemesi.  
 Kullanıcılar, satılık, kiralık ve günlük kiralık ilanları kolayca görüntüleyebilir.
 
